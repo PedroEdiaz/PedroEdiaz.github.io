@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WebGL 2 Test: Just a Triangle</title>
-    <script src="./assets/js/webgl-bindings.js"></script>
+	<title>GLFN: Proof of Concept</title>
+	<script src="./glfn.js"></script>
+	<script >
+		async function load_modules()
+		{
+			await load_wasm( "./glfn.wasm" );
+			await load_wasm( "./main.wasm" );
+			imports.main();
+		}
+		load_modules();
+	</script>
 </head>
 <body>
-    <canvas id="webgl-canvas" width="256" height="192"  ></canvas>
-    <script src="./assets/js/index.js"> </script>
 </body>
 </html>
+
